@@ -1,45 +1,62 @@
-import { Button, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function HomeScreen({ navigation }) {
-  const telaDetalhes = () => navigation.goBack();
-  const telaContato = () => navigation.goBack();
   return (
-    <View style={styles.app}>
-      <Text style={styles.text}>Tela Inicial</Text>
-      <Text style={styles.texto}>Informações sobre a Tela inicial</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>👋 Bem-vindo!</Text>
+      <Text style={styles.text}>
+        Este app foi criado para praticar a navegação com React Native usando o React Navigation.
+      </Text>
 
-      <View style={styles.btn}>
-      <Button
-        title="Detalhes"
-        onPress={() => navigation.navigate("Details")}
-      />
-      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('About')}
+      >
+        <Text style={styles.buttonText}>Ir para Sobre o Desenvolvedor</Text>
+      </TouchableOpacity>
 
-      <View style={styles.btn}>
-      <Button
-        title="Contatos"
-        onPress={() => navigation.navigate("Contact")}
-      />
-      </View>
+      <TouchableOpacity
+        style={[styles.button, { backgroundColor: '#FF9800', marginTop: 15 }]}
+        onPress={() => navigation.navigate('Details')}
+      >
+        <Text style={styles.buttonText}>Ir para Detalhes do App</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    app: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    text: {
-        fontSize: 24,
-        padding:10
-    },
-    texto: {
-      padding: 15
-    },
-    btn: {
-      padding: 10
-    }
+  container: {
+    flex: 1,
+    backgroundColor: '#F2F2F2',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+    marginBottom: 10,
+  },
+  text: {
+    fontSize: 16,
+    color: '#555',
+    textAlign: 'center',
+    marginBottom: 30,
+    paddingHorizontal: 10,
+  },
+  button: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    elevation: 3,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });

@@ -1,39 +1,56 @@
-import { Button, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function DetailsScreen({ navigation }) {
-  const voltar = () => navigation.goBack();
-  const telaContato = () => navigation.navigate('Contact');
   return (
-    <View style={styles.app}>
-      <Text style={styles.text}>Tela de Detalhes</Text>
-      <Text style={styles.text}>Informações sobre a tela de detalhes(DetailsScreen)</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>ℹ️ Sobre o App</Text>
+      <Text style={styles.text}>
+        Este aplicativo tem como proposito demonstrar a navegação entre telas usando React Native com React Navigation.
+      </Text>
 
-      <View style={styles.btn}>
-      <Button title="Inicio" onPress={voltar} />
-      </View>
-
-      <View style={styles.btn}>
-      <Button title="Tela de Contato" onPress={telaContato} />
-      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('Home')}
+      >
+        <Text style={styles.buttonText}>Voltar para a Home</Text>
+      </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  app: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center",
+  container: {
+    flex: 1,
+    backgroundColor: '#F2F2F2',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+    marginBottom: 10,
   },
   text: {
-      fontSize: 24,
-      padding:10
+    fontSize: 16,
+    color: '#555',
+    textAlign: 'center',
+    paddingHorizontal: 10,
+    lineHeight: 22,
+    marginBottom: 30,
   },
-  texto: {
-    padding: 15
+  button: {
+    backgroundColor: '#4CAF50',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    elevation: 3,
   },
-  btn: {
-    padding: 10
-  }
+  buttonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });
