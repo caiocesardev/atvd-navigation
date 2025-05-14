@@ -4,9 +4,7 @@ Este é um projeto desenvolvido em **React Native com Expo** que demonstra a nav
 
 ## 🧭 Telas do App
 
-- **HomeScreen**: Tela inicial com apresentação do app
-- **DetailsScreen**: Informações sobre o aplicativo
-- **AboutScreen**: Informações sobre o desenvolvedor
+![img-func](https://github.com/user-attachments/assets/5f6fd15d-45c9-4fdc-921d-5d5e540aa506)
 
 ## 🚀 Como rodar o projeto
 
